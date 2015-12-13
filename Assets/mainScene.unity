@@ -956,7 +956,9 @@ MonoBehaviour:
   whatToHit:
     serializedVersion: 2
     m_Bits: 4294967035
+  effectSpawnRate: 10
   BulletTrailPrefab: {fileID: 458970, guid: 2af9b73f9e392144da61620469565958, type: 2}
+  muzzleFlashPrefab: {fileID: 459378, guid: 0fef5f3b633473e44b0fe8f34cd0fb6a, type: 2}
 --- !u!1 &1486383630
 GameObject:
   m_ObjectHideFlags: 0
