@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Weapon : MonoBehaviour {
 
-    public float fireRate = 0;
+    public float fireRate = 2.0f;
     public float damage = 10;
     public LayerMask whatToHit;
 
@@ -12,8 +12,8 @@ public class Weapon : MonoBehaviour {
 
     public Transform BulletTrailPrefab;
     public Transform muzzleFlashPrefab;
-
-    float timeToFire = 0;
+    
+    float deltaTime = 0.0f;
     Transform firePoint;
 
 	// Use this for initialization
@@ -27,31 +27,20 @@ public class Weapon : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	    if (fireRate == 0)
+        if (Input.GetButton("Fire1"))
         {
-            if (Input.GetMouseButtonDown(0))
-                Debug.Log("Pressed left click.");
-
-            if (Input.GetMouseButtonDown(1))
-                Debug.Log("Pressed right click.");
-
-            if (Input.GetMouseButtonDown(2))
-                Debug.Log("Pressed middle click.");
-            //if (Input.GetButtonDown("Fire1"))
-            if (Input.GetMouseButtonDown(0))
+            if (deltaTime >= 1/fireRate)            
             {
                 Debug.Log("Shoot");
                 Shoot();
+                deltaTime = 0f;
             }
         }
         else
         {
-            if (Input.GetButtonDown("Fire1") && Time.time > timeToFire)
-            {
-                timeToFire = Time.time + 1 / fireRate;
-                Shoot();
-            }
+            deltaTime += Time.time;
         }
+
 	}
 
     void Shoot()
@@ -61,7 +50,7 @@ public class Weapon : MonoBehaviour {
         RaycastHit2D hit = Physics2D.Raycast(firePointPosition, mousePosition-firePointPosition, 100, whatToHit);
         if (Time.time > timeToSpawnEffect)
         {
-            Effect();
+            StartCoroutine("Effect");
             timeToSpawnEffect = Time.time + 1 / effectSpawnRate;
         }
         Debug.DrawLine(firePointPosition, (mousePosition-firePointPosition)*100, Color.blue);
