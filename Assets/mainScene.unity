@@ -1041,10 +1041,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e8dfe759532cdb4386ec9d87efdfc0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 1392929556}
   updateRate: 2
-  speed: 300
-  fMode: 0
+  speed: 100
+  fMode: 1
   pathIsEnded: 0
   nextWaypointDistance: 3
 --- !u!50 &1644808086
