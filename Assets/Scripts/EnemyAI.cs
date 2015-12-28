@@ -34,7 +34,7 @@ public class EnemyAI : MonoBehaviour {
             Debug.LogError("No player found");
             return;
         }
-        seeker.startPath(transform.position, target.position, onPathComplete);
+        seeker.StartPath(transform.position, target.position, onPathComplete);
 
         StartCoroutine(updatePath());
     }
@@ -46,7 +46,7 @@ public class EnemyAI : MonoBehaviour {
             return false;
         }
 
-        seeker.startPath(transform.position, target.position, onPathComplete);
+        seeker.StartPath(transform.position, target.position, onPathComplete);
 
         yield return new WaitForSeconds(1f / updateRate);
         StartCoroutine(updatePath());
@@ -55,7 +55,7 @@ public class EnemyAI : MonoBehaviour {
     public void onPathComplete(Path p)
     {
         Debug.Log("We got a path, did it have an error ?" + p.error);
-        if (!path.error)
+        if (!p.error)
         {
             path = p;
             currentWaypoint = 0;
@@ -86,7 +86,7 @@ public class EnemyAI : MonoBehaviour {
         Vector3 dir = (path.vectorPath[currentWaypoint] - transform.position).normalized;
         dir *= speed * Time.fixedDeltaTime;
 
-        rb.addForce(dir, fMode);
+        rb.AddForce(dir, fMode);
 
         float dist = Vector3.Distance(transform.position, path.vectorPath[currentWaypoint]);
         if (dist < nextWaypointDistance){
