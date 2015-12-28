@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using Pathfinding;
 using System.Collections;
 
@@ -66,13 +66,32 @@ public class EnemyAI : MonoBehaviour {
     {
         if (target == null)
         {
-            return false;
+            return;
         }
 
         if (path == null)
         {
             return;
         }
+        if (currentWaypoint >= path.vectorPath.Count){
+            if (pathIsEnded)
+                return;
+            
+            Debug.Log("End of path reached");
+            pathIsEnded = true;
+            return;
+        }
+        pathIsEnded = false;
 
+        Vector3 dir = (path.vectorPath[currentWaypoint] - transform.position).normalized;
+        dir *= speed * Time.fixedDeltaTime;
+
+        rb.addForce(dir, fMode);
+
+        float dist = Vector3.Distance(transform.position, path.vectorPath[currentWaypoint]);
+        if (dist < nextWaypointDistance){
+            currentWaypoint++;
+            return;
+        }
     }
 } 
