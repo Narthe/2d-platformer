@@ -1,6 +1,7 @@
 using UnityEngine;
 using Pathfinding;
 using System.Collections;
+using System;
 
 [RequireComponent (typeof(Rigidbody2D))]
 [RequireComponent(typeof(Seeker))]
@@ -24,6 +25,8 @@ public class EnemyAI : MonoBehaviour {
 
     private int currentWaypoint = 0;
 
+    private bool searchingForPlayer = false;
+
     void Start()
     {
         seeker = GetComponent<Seeker>();
@@ -31,12 +34,33 @@ public class EnemyAI : MonoBehaviour {
 
         if (target == null)
         {
-            Debug.LogError("No player found");
+            if (!searchingForPlayer)
+            {
+                searchingForPlayer = true;
+                StartCoroutine(SearchForPlayer());
+            }
             return;
         }
         seeker.StartPath(transform.position, target.position, onPathComplete);
 
         StartCoroutine(updatePath());
+    }
+
+    private IEnumerator SearchForPlayer()
+    {
+        GameObject sResult = GameObject.FindGameObjectWithTag("Player");
+        if(sResult == null)
+        {
+            yield return new WaitForSeconds(0.5f);
+            StartCoroutine(SearchForPlayer());
+        }
+        else
+        {
+            target = sResult.transform;
+            searchingForPlayer = false;
+            StartCoroutine(updatePath());
+            return false;
+        }
     }
 
     IEnumerator updatePath()
