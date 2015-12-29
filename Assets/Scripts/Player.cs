@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 
+    [System.Serializable]
     public class PlayerStats
     {
         public float Health = 100f;

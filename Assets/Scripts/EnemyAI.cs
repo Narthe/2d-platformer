@@ -65,8 +65,13 @@ public class EnemyAI : MonoBehaviour {
 
     IEnumerator updatePath()
     {
-        if(target == null)
+        if (target == null)
         {
+            if (!searchingForPlayer)
+            {
+                searchingForPlayer = true;
+                StartCoroutine(SearchForPlayer());
+            }
             return false;
         }
 
@@ -90,6 +95,11 @@ public class EnemyAI : MonoBehaviour {
     {
         if (target == null)
         {
+            if (!searchingForPlayer)
+            {
+                searchingForPlayer = true;
+                StartCoroutine(SearchForPlayer());
+            }
             return;
         }
 
