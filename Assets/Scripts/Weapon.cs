@@ -48,12 +48,8 @@ public class Weapon : MonoBehaviour {
         Vector2 mousePosition = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
         Vector2 firePointPosition = new Vector2(firePoint.position.x, firePoint.position.y);
         RaycastHit2D hit = Physics2D.Raycast(firePointPosition, mousePosition-firePointPosition, 100, whatToHit);
-        if (Time.time > timeToSpawnEffect)
-        {
-            StartCoroutine("Effect");
-            timeToSpawnEffect = Time.time + 1 / effectSpawnRate;
-        }
-        Debug.DrawLine(firePointPosition, (mousePosition-firePointPosition)*100, Color.blue);
+        
+        //Debug.DrawLine(firePointPosition, (mousePosition-firePointPosition)*100, Color.blue);
         if (hit.collider != null)
         {
             //Debug.DrawLine(firePointPosition, hit.point, Color.red);
@@ -64,16 +60,35 @@ public class Weapon : MonoBehaviour {
                 enemy.DamageEnemy(damage);
             }
         }
+
+        if (Time.time > timeToSpawnEffect)
+        {
+            Debug.Log("time To Spawn");
+            Vector3 hitPos;
+            if (hit.collider == null)
+                hitPos = (mousePosition - firePointPosition) * 30;
+            else
+                hitPos = hit.point;
+            Effect(hitPos);
+            timeToSpawnEffect = Time.time + 1 / effectSpawnRate;
+        }
     }
 
-    IEnumerator Effect()
+    void Effect(Vector3 hitPos)
     {
-        Instantiate(BulletTrailPrefab, firePoint.position, firePoint.rotation);
+        Debug.Log("instantiate trail");
+        Transform trail = (Transform) Instantiate(BulletTrailPrefab, firePoint.position, firePoint.rotation);
+        LineRenderer lr = trail.GetComponent<LineRenderer>();
+        if(lr != null)
+        {
+            lr.SetPosition(0, firePoint.position);
+            lr.SetPosition(1, hitPos);
+        }
+
         Transform clone = (Transform) Instantiate(muzzleFlashPrefab, firePoint.position, firePoint.rotation);
         clone.parent = firePoint;
         float size = Random.Range(0.6f, 0.9f);
         clone.localScale = new Vector3(size, size, size);
-        yield return 0;
         Destroy(clone.gameObject, 0.02f);
     }
 }
