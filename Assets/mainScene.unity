@@ -150,15 +150,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 489154, guid: 04a7bce9c27224847a584d548d9c3eda, type: 2}
       propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11428530, guid: 04a7bce9c27224847a584d548d9c3eda, type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11448408, guid: 04a7bce9c27224847a584d548d9c3eda, type: 2}
-      propertyPath: rotationOffset
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04a7bce9c27224847a584d548d9c3eda, type: 2}
@@ -444,13 +436,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   astarData:
-    dataString: UEsDBBQAAAgIAAAIIez9SbAC8gEAANkDAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFdUtlu2zAQ/JWCz3YgKfIhvaW24xRIGyNu0WeaWlmEKVLgUR+B/71LSj5kPxjQzOzu7Cy/yNbxguRf5B8VDkhORpt4wibpJBuPstE0mQzHlE6LJM4om7CMjSJyHhBqGmD2k1quSB4PCDeqBqs5e5FbgV2iAXGSl0rXi2ILM2WsIXlJhYEB0cr6OumHHkieofYYKk74j70ZSAu6Yx9JJ5mgdQPFmp+g08RRq3r2AqkKaDm0xZQQ3HSz7LHx+33SIxmQglM07MegrAK+rSzJk7uKj7I0YMNoTY9zrnHf0Ih8V7bCDjU1u7vc4ihJz5dWP/vcMEam1Kp+6wYFx7bibIduGDX2Gs49OL/36OSeih3dCPhbgfylllo5iYez2mGZM5DMLx/XHWYVsN0FbZ31INf0Uh49ZeMoHafpdDGMpm3kT1n7S89nv/JhJni9CQWXj5cDNyE6BNZC+Yz9SUHjIX6g+3BrE0oQ87b+GPhNt7cH0cGvXBuLRFiXOqveudwtNS9uygs658a+85qHKPHmfrWNchqVZBEixhScnSktwYPtug1IKuxxhdNs/8IPzHXeA/5KmVXtOTqme+59eQCv2ijqEyu1707KJXalYtWSwQjGd5su8fy4kI/g21LTxr+6QtP9kp9qdQuFy1KtmQaQH7fq839QSwMEFAAACAAAAAgh7B5/XXYyAAAAMgAAABIAJABncmFwaDBfZWRpdG9yLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF7ImxvY2tlZCI6dHJ1ZSwic2hvd0V4dHJhIjpmYWxzZSwicGl2b3QiOiJDZW50ZXIifVBLAwQUAAAICAAACCHsPqfHGnYAAACDAAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAR2MsQ6DIBQA/+XNlogVn7g6uDXdG4cnoDL0YRCbNE3/vdLthrv7wMvF3QeGDq4CRQ0FLJG2dYdOnnh4e9ID1CTRYI26UVq1FV4aotZWUpNBo40qYSwgvTd3o6f7F3dK6+zZel7EEL0d8jVbHKzrw8Epa+X4/QFQSwECLQAUAAAICAAACCHs/UmwAvIBAADZAwAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAIAAAACCHsHn9ddjIAAAAyAAAAEgAkAAAAAAAAAAAAAAA/AgAAZ3JhcGgwX2VkaXRvci5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAAgh7D6nxxp2AAAAgwAAAAkAJAAAAAAAAAAAAAAAxQIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAwADABwBAACGAwAAAAA=
+    dataString: UEsDBBQAAAgIAAAIIexZDBeg8gEAANgDAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFdUslu2zAU/JWCZzuQFHmRbqntOAXSxohb9ExTTxZhihS41Evgf+8jJS+yDwY085aZefwiW8cLkn+Rf1Q4IDkZbeIJm6STbDzKRtNkMhxTOi2SOKNswjI2ish5QKhpgNlParkieTwg3KgarObsRW4FTokGxEleKl0vii3MlLGG5CUVBgZEK+v7pF96IHmGtcfQccJ/nM1AWtAd+0g6yQStGyjW/ARdTRy1Vc++QKoCWg5lMSUEN90ue2y8v096JANScIqC/Rosq4BvK0vy5K7joywN2LBa0+Oca/QbBpHvylY4oaZmd5dbHCXp+TLqZ58bxsiUWtVv3aKg2Fac7VANo8Zew7kH5/candxTsaMbAX8rkL/UUisn8XBWO2xzBpL55ePqYVYB213QVlkPck0v5dFTNo7ScZpOF8No2kb+lLW/9Hz2lg8zwetNaLh8vBy4CdEhsBbKZ+xPChoP8QPVh1ub0IKYl/XHwG+6vT2IDn7l2lgkgl3qrHrncrfUvLhVXtA5N/ad1zxEiTf31jbKaawkixAxpuDsTGkJHmztNiCpsMcVbrP9Cz8w130P+CtlVrXn6JjuuffLA3itjaI+sVL77qRc4lQqVi0ZhGB8t+0Sz4+GfATflpo2/tUVmu6X/FSrqysuS7VmGkB+3JrP/wFQSwMEFAAACAAAAAgh7B5/XXYyAAAAMgAAABIAJABncmFwaDBfZWRpdG9yLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF7ImxvY2tlZCI6dHJ1ZSwic2hvd0V4dHJhIjpmYWxzZSwicGl2b3QiOiJDZW50ZXIifVBLAwQUAAAICAAACCHsPqfHGnYAAACDAAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAR2MsQ6DIBQA/+XNlogVn7g6uDXdG4cnoDL0YRCbNE3/vdLthrv7wMvF3QeGDq4CRQ0FLJG2dYdOnnh4e9ID1CTRYI26UVq1FV4aotZWUpNBo40qYSwgvTd3o6f7F3dK6+zZel7EEL0d8jVbHKzrw8Epa+X4/QFQSwECLQAUAAAICAAACCHsWQwXoPIBAADYAwAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAIAAAACCHsHn9ddjIAAAAyAAAAEgAkAAAAAAAAAAAAAAA/AgAAZ3JhcGgwX2VkaXRvci5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAAgh7D6nxxp2AAAAgwAAAAkAJAAAAAAAAAAAAAAAxQIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAwADABwBAACGAwAAAAA=
     upgradeData: 
     data_backup: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
     cacheStartup: 0
-  showNavGraphs: 1
+  showNavGraphs: 0
   showUnwalkableNodes: 1
   debugMode: 0
   debugFloor: 0
@@ -616,7 +608,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 508122553}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalPosition: {x: 0, y: 1.5, z: -1.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 746741843}
@@ -1000,7 +992,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 194776, guid: 52063ceb84914d44096cf1f004a3bd5a, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 52063ceb84914d44096cf1f004a3bd5a, type: 2}
@@ -1160,7 +1152,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1644808085
 MonoBehaviour:
   m_ObjectHideFlags: 0

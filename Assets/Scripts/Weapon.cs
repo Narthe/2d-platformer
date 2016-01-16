@@ -7,6 +7,8 @@ public class Weapon : MonoBehaviour {
     public int damage = 10;
     public LayerMask whatToHit;
 
+    private BulletTrail _bulletTrail;
+
     float timeToSpawnEffect = 0;
     public float effectSpawnRate = 10;
 
@@ -45,10 +47,10 @@ public class Weapon : MonoBehaviour {
 
     void Shoot()
     {
-        Vector2 mousePosition = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 firePointPosition = new Vector2(firePoint.position.x, firePoint.position.y);
         RaycastHit2D hit = Physics2D.Raycast(firePointPosition, mousePosition-firePointPosition, 100, whatToHit);
-        
+
         //Debug.DrawLine(firePointPosition, (mousePosition-firePointPosition)*100, Color.blue);
         if (hit.collider != null)
         {
@@ -78,11 +80,10 @@ public class Weapon : MonoBehaviour {
     {
         Debug.Log("instantiate trail");
         Transform trail = (Transform) Instantiate(BulletTrailPrefab, firePoint.position, firePoint.rotation);
-        LineRenderer lr = trail.GetComponent<LineRenderer>();
-        if(lr != null)
+        _bulletTrail = trail.GetComponent<BulletTrail>();
+        if(_bulletTrail != null)
         {
-            lr.SetPosition(0, firePoint.position);
-            lr.SetPosition(1, hitPos);
+            _bulletTrail.DrawLine(firePoint.position, hitPos, 5f);
         }
 
         Transform clone = (Transform) Instantiate(muzzleFlashPrefab, firePoint.position, firePoint.rotation);

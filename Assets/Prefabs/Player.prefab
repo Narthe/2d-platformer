@@ -286,7 +286,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967035
   effectSpawnRate: 10
-  BulletTrailPrefab: {fileID: 458970, guid: 2af9b73f9e392144da61620469565958, type: 2}
+  BulletTrailPrefab: {fileID: 22456222, guid: 2af9b73f9e392144da61620469565958, type: 2}
   muzzleFlashPrefab: {fileID: 459378, guid: 0fef5f3b633473e44b0fe8f34cd0fb6a, type: 2}
 --- !u!114 &11443242
 MonoBehaviour:
@@ -340,6 +340,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fc08aab880341d45be00283d1cbe8f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerStats:
+    Health: 100
   fallBoundary: -20
 --- !u!212 &21208972
 SpriteRenderer:
